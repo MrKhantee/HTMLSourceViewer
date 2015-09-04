@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">StreamCaster</string>
+    <string name="app_id">ABC0DF12</string>
+
+    <string name="invalid_url">Invalid URL</string>
+    <string name="streamcloud_title">Open Streamcloud link</string>
+    <string name="parse_link">Parse link</string>
+</resources>
