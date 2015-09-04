@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">HTML Source Viewer</string>
+    <string name="open_website">Open website code</string>
 </resources>
