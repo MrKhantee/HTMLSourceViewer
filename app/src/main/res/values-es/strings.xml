@@ -1,4 +1,5 @@
 <resources>
-    <string name="app_name">HTML Source Viewer</string>
+    <string name="app_name">Lector HTML</string>
     <string name="open_website">Abrir URL</string>
+    <string name="search_error">El término de búsqueda no se ha encontrado</string>
 </resources>
