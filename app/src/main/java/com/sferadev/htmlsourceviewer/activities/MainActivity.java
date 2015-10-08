@@ -81,18 +81,27 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadCode() {
-        Document document = Jsoup.parse(NetworkUtils.getURLOutput(PreferenceUtils.getPreference(this,
-                PreferenceUtils.PROPERTY_LAST_WEB, "https://github.com/")));
-        textView.setText(document.outerHtml());
+        try {
+            Document document = Jsoup.parse(NetworkUtils.getURLOutput(PreferenceUtils.getPreference(this,
+                    PreferenceUtils.PROPERTY_LAST_WEB, "https://github.com/")));
+            textView.setText(document.outerHtml());
+        } catch (Exception e) {
+            Toast.makeText(this, R.string.url_error, Toast.LENGTH_LONG).show();
+        }
+
     }
 
     private void loadCode(String search) {
-        Document document = Jsoup.parse(NetworkUtils.getURLOutput(PreferenceUtils.getPreference(this,
-                PreferenceUtils.PROPERTY_LAST_WEB, "https://github.com/")));
-        if (document.select(search).hasText()) {
-            textView.setText(document.select(search).outerHtml());
-        } else {
-            Toast.makeText(this, getString(R.string.search_error), Toast.LENGTH_LONG).show();
+        try {
+            Document document = Jsoup.parse(NetworkUtils.getURLOutput(PreferenceUtils.getPreference(this,
+                    PreferenceUtils.PROPERTY_LAST_WEB, "https://github.com/")));
+            if (document.select(search).hasText()) {
+                textView.setText(document.select(search).outerHtml());
+            } else {
+                Toast.makeText(this, getString(R.string.search_error), Toast.LENGTH_LONG).show();
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, R.string.url_error, Toast.LENGTH_LONG).show();
         }
     }
 
