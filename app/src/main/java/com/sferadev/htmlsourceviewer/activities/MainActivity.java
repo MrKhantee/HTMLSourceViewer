@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         if (!searchView.isIconified()) {
             searchView.setIconified(true);
             loadCode();
+        } else {
+            finish();
         }
     }
 
